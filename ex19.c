@@ -38,18 +38,22 @@ void *Room_move(void *self, Direction direction) {
    if (direction == NORTH && room->north) {
 	  printf("You go north, into:\n");
 	  next = room->north;
+    printf("%s\n", next->_(description));
    }
    else if(direction == SOUTH && room->south) {
 	  printf("You go south, into:\n");
-	  next = room->north;
+	  next = room->south;
+    printf("%s\n", next->_(description));
    }
    else if (direction == EAST && room->east) {
 	  printf("You go east, into:\n");
-	  next = room->north;
+	  next = room->east;
+    printf("%s\n", next->_(description));
    }
    else if(direction == WEST && room->west) {
 	  printf("You go west, into:\n");
-	  next = room->north;
+	  next = room->west;
+    printf("%s\n", next->_(description));
    }
 
    else {

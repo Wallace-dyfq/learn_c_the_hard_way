@@ -12,7 +12,7 @@ int Object_init(void *self){
 void Object_destroy(void *self){
   Object *obj = self;
   if (obj) {
-    if(obj->description) free(obj->description);
+    if(obj->description) free(obj->description); // free the char*, which might be created in the heap
     free(obj);
    }
 }
@@ -21,7 +21,7 @@ void Object_describe(void *self){
   printf("%s.\n", obj->description);
 }
 void *Object_move(void *self, Direction direction){
-  printf("You cannot go that direction.\n");
+  printf("You cannot go that direction.\n"); // why?
   return NULL;
 }
 int Object_attack(void *self, int damage){
